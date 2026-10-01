@@ -1,0 +1,6 @@
+# Configuration de connexion base de données.
+# Copiez ce fichier en "db.properties" et ajustez les valeurs pour votre environnement.
+
+db.url=jdbc:mysql://localhost:3306/lias_db?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&connectionTimeZone=LOCAL
+db.user=root
+db.password=root 

@@ -1,0 +1,53 @@
+/* ===============================
+   APP LAYOUT STRUCTURE (Écran Large)
+=============================== */
+.app-wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-bg);
+}
+
+.app-main {
+    flex: 1;
+    margin-left: 260px; /* 👈 AJOUT ICI : Repousse le bloc central après les 260px de la sidebar */
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: margin-left 0.3s ease;
+}
+
+.app-content {
+    padding: var(--space-lg, 24px);
+    flex: 1;
+}
+
+/* Gestion de la sidebar repliée si besoin */
+.sidebar.collapsed + .app-main {
+    margin-left: 70px; /* S'ajuste si votre sidebar possède un mode réduit */
+}
+
+/* ===============================
+   RESPONSIVE (Écrans < 992px)
+=============================== */
+@media (max-width: 992px) {
+    .sidebar { /* 👈 Remplacement de .app-sidebar par .sidebar pour correspondre à votre JSP */
+        position: fixed;
+        left: -260px;
+        transition: 0.3s ease;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .app-main {
+        margin-left: 0; /* Plus de décalage sur mobile */
+    }
+
+    .mobile-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 20px;
+    }
+}

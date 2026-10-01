@@ -1,0 +1,13 @@
+# Eclipse
+.settings/
+.classpath
+.project
+
+# Maven
+target/
+
+# Fichiers de test oubliés
+WEB-INF/uploads/cv/*.pdf
+
+# Config sensible (voir db.properties.example)
+src/main/resources/db.properties

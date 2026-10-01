@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" version="6.0">
+
+    <display-name>LIAS Application</display-name>
+
+    <!-- ══ 1. ENCODING ══ -->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>ma.lias.app.filter.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- ══ 2. AUTH ══ -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>ma.lias.app.filter.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/membre/*</url-pattern>
+        <url-pattern>/directeur/*</url-pattern>
+        <url-pattern>/admin/*</url-pattern>
+        <url-pattern>/messages</url-pattern>
+    </filter-mapping>
+
+    <!-- ══ 3. CSRF ══ -->
+    <filter>
+        <filter-name>CsrfFilter</filter-name>
+        <filter-class>ma.lias.app.filter.CsrfFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CsrfFilter</filter-name>
+        <url-pattern>/membre/*</url-pattern>
+        <url-pattern>/directeur/*</url-pattern>
+        <url-pattern>/admin/*</url-pattern>
+        <url-pattern>/messages</url-pattern>
+    </filter-mapping>
+
+    <!-- ══ 4. STATUT ACCESS ══ -->
+    <filter>
+        <filter-name>StatutAccessFilter</filter-name>
+        <filter-class>ma.lias.app.filter.StatutAccessFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>StatutAccessFilter</filter-name>
+        <url-pattern>/membre/*</url-pattern>
+        <url-pattern>/messages</url-pattern>
+    </filter-mapping>
+
+    <!-- ══ 5. ROLE ══ -->
+    <filter>
+        <filter-name>RoleFilter</filter-name>
+        <filter-class>ma.lias.app.filter.RoleFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>RoleFilter</filter-name>
+        <url-pattern>/admin/*</url-pattern>
+        <url-pattern>/directeur/*</url-pattern>
+    </filter-mapping>
+
+    <!-- ══ 6. AUDIT ══ -->
+    <filter>
+        <filter-name>AuditFilter</filter-name>
+        <filter-class>ma.lias.app.filter.AuditFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuditFilter</filter-name>
+        <url-pattern>/membre/*</url-pattern>
+        <url-pattern>/directeur/*</url-pattern>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+    <!-- ══ 7. NOTIFICATION COUNT ══ -->
+    <filter>
+        <filter-name>NotificationCountFilter</filter-name>
+        <filter-class>ma.lias.app.filter.NotificationCountFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>NotificationCountFilter</filter-name>
+        <url-pattern>/membre/*</url-pattern>
+        <url-pattern>/directeur/*</url-pattern>
+        <url-pattern>/search</url-pattern>
+        
+    </filter-mapping>
+
+    <!-- ══ 8. GLOBAL EXCEPTION ══ -->
+    <filter>
+        <filter-name>GlobalExceptionFilter</filter-name>
+        <filter-class>ma.lias.app.filter.GlobalExceptionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>GlobalExceptionFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- ══ SESSION ══ -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+        </cookie-config>
+    </session-config>
+
+    <!-- ══ WELCOME ══ -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- ══ ERREURS ══ -->
+    <error-page><error-code>400</error-code><location>/WEB-INF/views/errors/400.jsp</location></error-page>
+    <error-page><error-code>403</error-code><location>/WEB-INF/views/errors/403.jsp</location></error-page>
+    <error-page><error-code>404</error-code><location>/WEB-INF/views/errors/404.jsp</location></error-page>
+    <error-page><error-code>500</error-code><location>/WEB-INF/views/errors/500.jsp</location></error-page>
+
+</web-app>

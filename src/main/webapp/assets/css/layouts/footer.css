@@ -1,0 +1,54 @@
+/* =========================================
+   FOOTER PREMIUM
+========================================= */
+
+.footer {
+    background: linear-gradient(135deg, #0B1C2D, #132A3F);
+    color: #F1F5F9;
+    padding: 70px 0 30px;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-left img {
+    margin-bottom: 15px;
+}
+
+.footer-left p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.footer-muted {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: #CBD5E1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-accent);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    opacity: 0.7;
+}

@@ -1,0 +1,56 @@
+:root {
+
+    /* ===============================
+       🎨 COULEURS PRINCIPALES
+    =============================== */
+
+    --color-primary: #0B1C2D;
+    --color-primary-light: #132A3F;
+
+    --color-accent: #D97706;
+    --color-accent-hover: #B45309;
+    --color-accent-soft: #FEF3C7;
+
+    --color-bg: #F2EFEA;
+    --color-card: #FFFFFF;
+
+    --color-text: #1E293B;
+    --color-muted: #64748B;
+    --color-border: #E5E7EB;
+
+    /* ===============================
+       SPACING
+    =============================== */
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    /* ===============================
+       RADIUS
+    =============================== */
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+
+    /* ===============================
+       SHADOWS
+    =============================== */
+
+    --shadow-sm: 0 4px 10px rgba(11, 28, 45, 0.05);
+    --shadow-md: 0 10px 30px rgba(11, 28, 45, 0.08);
+}
+
+/* DARK MODE OPTIONNEL */
+body.dark-mode {
+
+    --color-bg: #0B1C2D;
+    --color-card: #132A3F;
+
+    --color-text: #F1F5F9;
+    --color-muted: #94A3B8;
+    --color-border: #1E293B;
+}

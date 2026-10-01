@@ -1,0 +1,77 @@
+/* =========================================
+   NAVBAR PREMIUM – LIAS
+========================================= */
+
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Container */
+.navbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo img {
+    display: block;
+}
+.logo img {
+    height: 55px;
+    width: auto;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+/* Hover underline élégant */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--color-accent);
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Right side buttons */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* on pourra ajouter burger plus tard */
+    }
+}

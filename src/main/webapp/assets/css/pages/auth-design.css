@@ -1,0 +1,161 @@
+/* =========================================================================
+   PAGE CONNEXION — split-screen, réutilise les tokens .public-layout
+   ========================================================================= */
+
+.public-layout.login-layout {
+    min-height: 100vh;
+    background: var(--pub-paper);
+}
+
+.public-layout .auth-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+}
+
+/* --- Panneau de marque --- */
+.public-layout .auth-brand {
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse 120% 100% at 20% -10%, #241A42 0%, #14101F 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px;
+}
+.public-layout .auth-brand-graph {
+    position: absolute;
+    top: -40px; right: -60px;
+    width: 340px; height: 340px;
+}
+.public-layout .auth-brand .pub-logo-mark { background: rgba(255,255,255,.15); }
+.public-layout .auth-brand-text { position: relative; z-index: 1; max-width: 420px; }
+.public-layout .auth-brand-text h2 {
+    font-family: var(--pub-display);
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 12px;
+    line-height: 1.3;
+}
+.public-layout .auth-brand-text p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #C7C1DA;
+    margin: 0;
+}
+
+/* --- Formulaire --- */
+.public-layout .auth-form-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.public-layout .auth-card { width: 100%; max-width: 380px; }
+
+.public-layout .auth-title {
+    font-family: var(--pub-display);
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: var(--pub-ink);
+}
+.public-layout .auth-subtitle {
+    font-size: 14px;
+    color: var(--pub-ink-soft);
+    margin: 0 0 26px;
+}
+
+.public-layout .auth-alert {
+    font-size: 13px;
+    padding: 11px 14px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+}
+.public-layout .auth-alert-success { background: #E7F7EE; color: #0F7A3D; }
+.public-layout .auth-alert-error { background: #FDEAEA; color: #C0392B; }
+
+.public-layout .auth-form { display: flex; flex-direction: column; gap: 16px; }
+
+.public-layout .auth-field label {
+    display: block;
+    font-family: var(--pub-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--pub-ink-soft);
+    margin-bottom: 7px;
+}
+.public-layout .auth-field input {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: var(--pub-body);
+    font-size: 14.5px;
+    padding: 12px 14px;
+    border: 1px solid var(--pub-line-strong);
+    border-radius: 6px;
+    background: var(--pub-paper-raised);
+    color: var(--pub-ink);
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.public-layout .auth-field input:focus {
+    border-color: var(--pub-signal);
+    box-shadow: 0 0 0 3px var(--pub-signal-dim);
+}
+
+.public-layout .auth-submit {
+    width: 100%;
+    justify-content: center;
+    margin-top: 6px;
+    padding: 13px 20px;
+    font-size: 15px;
+}
+
+@media (max-width: 860px) {
+    .public-layout .auth-split { grid-template-columns: 1fr; }
+    .public-layout .auth-brand { min-height: 220px; padding: 32px; }
+    .public-layout .auth-brand-graph { opacity: .5; }
+}
+
+/* =========================================================================
+   FORMULAIRE D'ADHÉSION — réutilise .auth-field, grille 2 colonnes
+   ========================================================================= */
+
+.public-layout .adhesion-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+.public-layout .adhesion-full { grid-column: 1 / -1; }
+
+.public-layout .adhesion-form-grid select,
+.public-layout .adhesion-form-grid textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: var(--pub-body);
+    font-size: 14.5px;
+    padding: 12px 14px;
+    border: 1px solid var(--pub-line-strong);
+    border-radius: 6px;
+    background: var(--pub-paper-raised);
+    color: var(--pub-ink);
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+.public-layout .adhesion-form-grid select:focus,
+.public-layout .adhesion-form-grid textarea:focus {
+    border-color: var(--pub-signal);
+    box-shadow: 0 0 0 3px var(--pub-signal-dim);
+}
+.public-layout .adhesion-form-grid textarea { resize: vertical; font-family: var(--pub-body); }
+.public-layout .adhesion-form-grid input[type="file"] {
+    font-family: var(--pub-mono);
+    font-size: 12.5px;
+    color: var(--pub-ink-soft);
+}
+
+@media (max-width: 640px) {
+    .public-layout .adhesion-form-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,15 @@
+.badge-secondary {
+    background: rgba(124, 58, 237, 0.15);
+    color: var(--color-secondary);
+}
+.badge {
+    transition: 0.2s ease;
+}
+
+.badge:hover {
+    transform: scale(1.05);
+}
+.badge-accent {
+    background: rgba(6, 182, 212, 0.15);
+    color: var(--color-accent);
+}

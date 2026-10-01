@@ -1,0 +1,33 @@
+.materiel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-lg);
+}
+
+.materiel-card {
+    background: var(--color-card);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: 0.2s;
+}
+
+.materiel-card:hover {
+    transform: translateY(-3px);
+}
+
+.materiel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.materiel-header h3 {
+    font-size: 16px;
+}
+
+.materiel-info p {
+    font-size: 13px;
+    margin-bottom: var(--space-sm);
+}

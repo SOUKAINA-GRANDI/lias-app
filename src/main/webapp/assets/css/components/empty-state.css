@@ -1,0 +1,30 @@
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--color-card);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-top: var(--space-lg);
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-md);
+    opacity: 0.8;
+}
+
+.empty-state h3 {
+    font-size: 20px;
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary);
+}
+
+.empty-state p {
+    font-size: 14px;
+    color: var(--color-muted);
+    margin-bottom: var(--space-md);
+}
+
+.empty-state .btn-primary {
+    margin-top: var(--space-sm);
+}

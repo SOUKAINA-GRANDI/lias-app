@@ -1,0 +1,13 @@
+.error-page {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.error-page h1 {
+    font-size: 80px;
+    color: var(--color-primary);
+}
+
+.error-page h3 {
+    margin-bottom: var(--space-md);
+}

@@ -1,0 +1,80 @@
+/* =========================================
+   BASE (toujours en premier)
+========================================= */
+
+@import url("base/variables.css");
+@import url("base/reset.css");
+@import url("base/typography.css");
+@import url("base/utilities.css");
+@import url("base/animations.css");
+@import url("base/responsive.css");
+
+/* =========================================
+   COMPONENTS
+========================================= */
+
+@import url("components/buttons.css");
+@import url("components/cards.css");
+@import url("components/forms.css");
+@import url("components/tables.css");
+@import url("components/badges.css");
+@import url("components/alerts.css");
+@import url("components/empty-state.css");
+@import url("components/pagination.css");
+
+/* =========================================
+   LAYOUTS
+========================================= */
+
+@import url("layouts/public-layout.css");
+@import url("layouts/navbar.css");
+@import url("layouts/footer.css");
+@import url("layouts/sidebar.css"); /* 👈 AJOUTEZ CETTE LIGNE ICI */
+@import url("layouts/topbar.css");
+
+/* =========================================
+   PAGES
+========================================= */
+@import url("layouts/public-layout.css");
+@import url("pages/public-home.css");
+@import url("pages/public-presentation.css");
+@import url("pages/public-members.css");
+@import url("pages/public-events.css");
+@import url("pages/public-publications.css");
+@import url("pages/public-calendar.css");
+@import url("pages/public-adhesion.css");
+@import url("pages/profile.css");
+
+
+@import url("pages/dashboard.css");
+@import url("pages/profile.css");
+@import url("pages/events.css");
+@import url("pages/chat.css");
+@import url("pages/notifications.css");
+@import url("pages/materiel.css");
+@import url("pages/report.css");
+@import url("pages/login.css");
+@import url("pages/errors.css");
+
+
+
+/* =========================================
+   GLOBAL UTILITIES
+========================================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-muted {
+    color: var(--color-muted);
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}

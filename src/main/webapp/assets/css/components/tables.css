@@ -1,0 +1,162 @@
+/* =========================================
+   🧱 COMPONENT : CUSTOM TABLES SYSTEM
+========================================= */
+
+/* Conteneur de la table (Carte blanche) */
+.table-container {
+    background: var(--color-card, #ffffff);
+    border: 1px solid var(--color-border, #E5E7EB);
+    border-radius: var(--radius-lg, 16px);
+    padding: var(--space-lg, 24px);
+    box-shadow: var(--shadow-sm);
+    margin-top: var(--space-md, 16px);
+}
+
+/* En-tête au-dessus du tableau (Titre + Compteur) */
+.table-header-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-lg, 24px);
+}
+
+.table-header-action h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--color-primary, #0B1C2D);
+    font-weight: 700;
+}
+
+.count-badge {
+    background: #F1F5F9;
+    color: var(--color-muted, #64748B);
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Structure de la Table */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.custom-table th {
+    background: #F8FAFC;
+    color: var(--color-muted, #64748B);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 14px 16px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--color-border, #E5E7EB);
+}
+
+.custom-table td {
+    padding: 16px;
+    border-bottom: 1px solid #F1F5F9;
+    color: var(--color-text, #1E293B);
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+/* Effet au survol des lignes */
+.custom-table tbody tr:hover {
+    background-color: #F8FAFC;
+}
+
+/* Cellule Profil du Membre (Avatar + Infos) */
+.member-profile-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.member-mini-avatar {
+    width: 38px;
+    height: 38px;
+    background: var(--color-accent-soft, #FEF3C7);
+    color: var(--color-accent, #D97706);
+    border: 1px solid rgba(219, 120, 6, 0.15);
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.member-name-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.m-name {
+    font-weight: 600;
+    color: var(--color-primary, #0B1C2D);
+}
+
+.m-grade {
+    font-size: 11px;
+    color: var(--color-muted, #64748B);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.m-email {
+    color: var(--color-muted, #64748B);
+    font-weight: 500;
+}
+
+/* Badges d'États (Actif / Désactivé) */
+.role-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.badge-green {
+    background: #DCFCE7;
+    color: #15803D;
+}
+
+.badge-red {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+/* Boutons d'actions épurés */
+.btn-action-view {
+    cursor: pointer;
+    background: #ffffff;
+    border: 1px solid var(--color-border, #E5E7EB);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm, 6px);
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-action-view:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-action-view i {
+    font-size: 13px;
+}
+
+/* Utilitaires basiques */
+.text-center {
+    text-align: center !important;
+}

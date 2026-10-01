@@ -1,0 +1,14 @@
+.card,
+.stat-card,
+.materiel-card,
+.event-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover,
+.stat-card:hover,
+.materiel-card:hover,
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
