@@ -7,6 +7,7 @@ import ma.lias.app.dao.UtilisateurDAO;
 import ma.lias.app.enums.StatutMembre;
 import ma.lias.app.exception.BusinessException;
 import ma.lias.app.model.Membre;
+import ma.lias.app.model.Mandat;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -20,6 +21,7 @@ public class MembreService {
             new AffiliationHistoriqueDAO();
     private final MembreHistoriqueDAO membreHistoriqueDAO =
             new MembreHistoriqueDAO();
+    private final MandatService mandatService = new MandatService();
 
     // ✅ Créer membre
     public void create(Membre membre) {
@@ -129,6 +131,14 @@ public class MembreService {
 
         if (nouveauStatut == StatutMembre.RETRAITE
                 || nouveauStatut == StatutMembre.ANCIEN) {
+            // ✅ Si on désactive un membre qui est le directeur en mandat, on libère le mandat.
+            if (nouveauStatut == StatutMembre.RETRAITE || nouveauStatut == StatutMembre.ANCIEN) {
+                Mandat mandatActif = mandatService.getMandatActif();
+                if (mandatActif != null && mandatActif.getDirecteurId() != null
+                        && mandatActif.getDirecteurId().equals(membreId)) {
+                    mandatService.cloturerActuel();
+                }
+            }
             membreDAO.disable(membreId);   // écrit actif = false
         }
     }

@@ -7,6 +7,8 @@ import ma.lias.app.util.PasswordUtil;
 import ma.lias.app.util.EmailUtil;
 import ma.lias.app.dao.MembreDAO;
 import ma.lias.app.model.Membre;
+import ma.lias.app.service.MembreService;
+import ma.lias.app.enums.StatutMembre;
 
 import java.util.List;
 import java.util.UUID;
@@ -15,6 +17,7 @@ public class UtilisateurService {
 
     private final UtilisateurDAO dao =new UtilisateurDAO();
     private final MembreDAO membreDAO = new MembreDAO();
+    private final MembreService membreService = new MembreService();
 
     public List<Utilisateur> findAll() { return dao.findAll();}
 
@@ -27,18 +30,21 @@ public class UtilisateurService {
 
         dao.toggleActif(id, actif);
 
-        // ✅ On garde le compte (utilisateur) et la fiche (membre) synchronisés.
         Membre membre = membreDAO.findByUtilisateurId(id);
 
         if (membre != null) {
 
             if (!actif) {
-                membreDAO.disable(membre.getId());
+                // Par défaut, une désactivation depuis l'admin pose le membre en "Ancien membre"
+                // (sauf s'il était déjà Retraité, auquel cas on garde ce statut plus précis).
+                if (!"RETRAITE".equals(membre.getStatut())) {
+                    membreService.changeStatut(membre.getId(), StatutMembre.ANCIEN);
+                } else {
+                    membreDAO.disable(membre.getId());
+                }
 
             } else {
                 if ("RETRAITE".equals(membre.getStatut()) || "ANCIEN".equals(membre.getStatut())) {
-                    // On annule la réactivation du compte : il faut d'abord choisir
-                    // un nouveau statut via la page Membres du directeur.
                     dao.toggleActif(id, false);
                     throw new BusinessException(
                             "Ce membre est " + membre.getStatut().toLowerCase()
